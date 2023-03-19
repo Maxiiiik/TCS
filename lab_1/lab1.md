@@ -1,7 +1,7 @@
 ## 6.Задокументувати у файл результат запуску контейнера:
 
 
-#1 
+#1 hello-world
 --------------------
 
 ```
@@ -94,3 +94,31 @@ bash-4.4$ git --version
 git version 2.18.1
 ```
 
+
+--------------------
+#5 Склонувати у контейнер в домашній каталог користувача довільний репозиторій та задокументувати результат роботи команди і вміст домашнього каталогу.
+--------------------
+```
+bash-4.4$ ls
+bash-4.4$ cd home/download
+bash-4.4$ ls
+bash-4.4$ git clone https://github.com/Maxiiiik/repo.git
+Cloning into 'repo'...
+remote: Enumerating objects: 75, done.
+remote: Counting objects: 100% (75/75), done.
+remote: Compressing objects: 100% (43/43), done.
+remote: Total 75 (delta 33), reused 54 (delta 22), pack-reused 0
+Unpacking objects: 100% (75/75), done.
+```
+
+--------------------
+#6 Вийти із поточного контейнера та перезапустити його. Запустити у контейнері командний рядок та задокументувати вміст домашнього каталогу після перезапуску.
+--------------------
+```
+shuprr@Uplime:/$ docker restart lab1
+lab1
+shuprr@Uplime:/$ docker exec -it lab1 bash
+bash-4.4$ ls
+repo
+bash-4.4$
+```
