@@ -1,0 +1,6 @@
+FROM python:3
+
+COPY ap.py /
+COPY labs2.txt /
+RUN pip install flask
+CMD ["python", "./ap.py"]
