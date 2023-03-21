@@ -474,7 +474,7 @@ CONTAINER ID   IMAGE                          COMMAND                  CREATED  
 mysqli::real_connect(): (HY000/2002): No such file or directory
 ```
 
-# Можливо в завданні самому помилка, але з терміналу в самому Докері... Воно заходить root password
+# Можливо в завданні самому помилка, але з терміналу воно заходить(в самому Docker`i root password) 
 ```
 3.png
 
