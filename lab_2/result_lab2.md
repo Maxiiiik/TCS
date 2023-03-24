@@ -1,7 +1,5 @@
 
-#1 docker build -t myapp .
-
-
+# 1 docker build -t myapp .
 ```
 docker build -t myapp .
 ERRO[0000] Can't add file /home/shuprr/.docker/run/docker-cli-api.sock to tar: archive/tar: sockets not supported
@@ -44,7 +42,7 @@ Successfully built 4fb21a76144c
 Successfully tagged myapp:latest
 ```
 
-#2 docker run myapp
+# 2 docker run myapp
 ```
 shuprr@Uplime:~$ docker run myapp
 Hello, World! My name Max
@@ -62,13 +60,13 @@ ffdbe8c75430   ellerbrock/alpine-bash-git   "/usr/bin/dumb-init …"   2 hours a
 
 
 
-#3 На вибраній мові програмування напишіть програму, яка зчитує текст цієї лабораторної роботи із файлу і виводить його у термінал.
+# 3 На вибраній мові програмування напишіть програму, яка зчитує текст цієї лабораторної роботи із файлу і виводить його у термінал.
 ```
 PS C:\Edu\TCS\TCS\lab_2> & C:/Users/shupr/AppData/Local/Programs/Python/Python311/python.exe c:/Edu/TCS/TCS/lab_2/ap.py
 hello world!
 ```
 
-#4 Створіть Dockerfile для запуску цієї програми у контейнері.
+# 4 Створіть Dockerfile для запуску цієї програми у контейнері.
 ```
 FROM python:3
 
@@ -79,9 +77,9 @@ CMD ["python", "./ap.py"]
 ```
 
 
-#5 Створіть Dockerfile для запуску цієї програми у контейнері.
+# 5 Створіть Dockerfile для запуску цієї програми у контейнері.
+## 1
 ```
-##1
 docker build -t myapp2 -f Dockerfile2 .
 ERRO[0000] Can't add file /home/shuprr/.docker/run/docker-cli-api.sock to tar: archive/tar: sockets not supported
 Sending build context to Docker daemon  35.33kB
@@ -125,14 +123,14 @@ Successfully built 12d8f3442f5b
 Successfully tagged myapp2:latest
 ```
 
+## 2
 ```
-##2
 shuprr@Uplime:~$ docker run myapp2
 hello world!
 ```
 
+## 3
 ```
-##3
 shuprr@Uplime:~$ docker container ls -a
 CONTAINER ID   IMAGE                        COMMAND                  CREATED          STATUS
        PORTS     NAMES
