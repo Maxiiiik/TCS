@@ -493,3 +493,85 @@ owners.
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 ```
+
+
+
+
+
+# docker-compose.yml
+```
+version: '3.7'
+services:
+  db:
+    image: mysql/mysql-server:latest
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: test_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: password
+    ports:
+      - "8080:80"
+    volumes:
+      - ./config:/config.inc.php 
+
+volumes:
+  data:
+```
+
+# docker-compose up -d
+```
+shuprr@Uplime:/$ cd home
+shuprr@Uplime:/home$ ls
+shuprr
+shuprr@Uplime:/home$ cd shuprr
+shuprr@Uplime:~$ ls
+ -p           ap.py    config.inc.php       labs2.txt   web_server
+ Dockerfile   app.py   docker-compose.yml   mysql      
+shuprr@Uplime:~$ docker-compose up -d
+[+] Running 4/4
+ ⠿ Network shuprr_default  Created                                                                       0.0s
+ ⠿ Volume "shuprr_data"    Created                                                                       0.0s
+ ⠿ Container mysql         Started                                                                       0.9s
+ ⠿ Container phpmyadmin    Started
+
+
+4.png
+
+```
+
+# config.inc.php
+```
+<?php
+$cfg['blowfish_secret'] = 'random-string';
+$cfg['Servers'][1]['host'] = 'db';
+$cfg['Servers'][1]['port'] = '3306';
+$cfg['Servers'][1]['socket'] = '';
+$cfg['Servers'][1]['auth_type'] = 'cookie';
+$cfg['Servers'][1]['user'] = 'root';
+$cfg['Servers'][1]['password'] = 'password';
+$cfg['UploadDir'] = '';
+$cfg['SaveDir'] = '';
+```
+
+
+# v2
+
+```
+docker run -d --name myadmin --link mysql:db -v ~/config.inc.php:/etc/phpmyadmin/config.inc.php -e PMA_HOST=mysql -e PMA_USER=root -e PMA_PASSWORD=password -p 8080:80 phpmyadmin/phpmyadmin:latest
+root root 
+
+5.png
+```
