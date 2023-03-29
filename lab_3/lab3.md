@@ -571,7 +571,8 @@ $cfg['SaveDir'] = '';
 
 ```
 docker run -d --name myadmin --link mysql:db -v ~/config.inc.php:/etc/phpmyadmin/config.inc.php -e PMA_HOST=mysql -e PMA_USER=root -e PMA_PASSWORD=password -p 8080:80 phpmyadmin/phpmyadmin:latest
-root root 
+root password = incorrect 
+root root = incorrect 
 
 5.png
 ```
