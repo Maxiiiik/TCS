@@ -1,20 +1,5 @@
 
 
-
-#Lab 4
-## https://github.com/Maxiiiik/TCS/blob/main/lab_3/lab3.md#docker-composeyml
-
-
-
-
-
-
-
-
-
-
-
-
 # 1 Запустіть веб-сервер у Docker контейнері та зробіть його доступним на локальному порту:
 
 ## Додайте каталог web_server. У ньому створіть файл index.html із довільним контентом.
