@@ -494,7 +494,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 ```
 
-
+# ---------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -545,7 +545,7 @@ shuprr@Uplime:~$ docker-compose up -d
  ⠿ Network shuprr_default  Created                                                                       0.0s
  ⠿ Volume "shuprr_data"    Created                                                                       0.0s
  ⠿ Container mysql         Started                                                                       0.9s
- ⠿ Container phpmyadmin    Started
+ ⠿ Container phpmyadmin    Started                                                                       0.9s
 
 
 4.png
@@ -576,3 +576,61 @@ root root = incorrect
 
 5.png
 ```
+
+
+
+
+
+
+# docker-compose 2
+
+```
+version: '3'
+services:
+  db:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+    environment:
+      # MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: 'password'
+      # MYSQL_DATABASE: test_db
+      # MYSQL_ROOT_HOST: 'localhost' 
+    ports:
+      - "3306:3306"
+    # volumes:
+    #   - data:/var/lib/mysql
+    #   -  "./mysql:/var/lib/mysql"
+    #   -  "./mysql/my.cnf:/etc/mysql/my.cnf"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: 'db' 
+      # PMA_USER: root
+      # PMA_PASSWORD: password
+      # PMA_ARBITRARY: 1
+      
+    ports:
+      - "8080:80"
+    # volumes:
+    #   - ./config.inc.php:/etc/phpmyadmin/config.inc.php
+
+#volumes:
+ # data:
+ ```
+## docker-compose up -d
+ ```
+  shuprr@Uplime:~$ docker-compose up -d
+  [+] Running 2/2
+   ⠿ Container phpmyadmin  Running                                                                         0.0s
+   ⠿ Container mysql       Started                                                                         1.8s
+  shuprr@Uplime:~$ docker-compose ps
+  NAME                IMAGE                          COMMAND                  SERVICE             CREATED             STATUS              PORTS
+  mysql               mysql:latest                   "docker-entrypoint.s…"   db                  7 minutes ago       Up 7 minutes        0.0.0.0:3306->3306/tcp, 33060/tcp
+  phpmyadmin          phpmyadmin/phpmyadmin:latest   "/docker-entrypoint.…"   phpmyadmin          8 minutes ago       Up 8 minutes        0.0.0.0:8080->80/tcp
+ ```
+
+ # 6.png
