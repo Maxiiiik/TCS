@@ -1,8 +1,8 @@
 
 
 
-# Lab 4
-## https://github.com/Maxiiiik/TCS/blob/main/lab_3/lab3.md#---------------------------------------------------------------------------------------------------------------------------------
+#Lab 4
+## https://github.com/Maxiiiik/TCS/blob/main/lab_3/lab3.md#docker-composeyml
 
 
 
