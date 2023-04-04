@@ -644,8 +644,3 @@ services:
 
  # 6.png
 ![he-hehe](https://user-images.githubusercontent.com/63784207/229834681-1aa48240-a289-46aa-a26a-0ad2c5e56054.gif)
-
-<<<<<<< HEAD
-=======
- 
->>>>>>> 21a66cae47605148f8ff285820ce9407ad167d7b
