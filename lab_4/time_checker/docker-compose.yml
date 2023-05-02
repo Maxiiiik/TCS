@@ -1,0 +1,17 @@
+version: "3"
+services:
+  time_service:
+    build:
+      context: .
+      dockerfile: Dockerfile.write
+    volumes:
+      - ./screen:/app/screen
+    restart: always
+
+  directory_service:
+    build:
+      context: .
+      dockerfile: Dockerfile.read
+    volumes:
+      - ./screen:/app/screen
+    restart: always
