@@ -1,20 +1,65 @@
-
-
-
-
 {
     "type": "FeatureCollection",
     "name": "field_data",
     "crs": {
-        "type": "name",
-        "properties": {
-            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
-        }
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+      }
     },
     "features": [
-        {"type": "Feature","properties": {"point_of_interest": {"lat": 30.34429249760622,"lon": 50.08611402259139},"field_data":  {"name": "Pin4","lat": 30.34448115085623,"lon": 50.06295931046618},"moisture": 2952},"geometry": { "type": "Point","coordinates": [30.34429249760622,50.08611402259139]}},
-        {"type": "Feature","properties": {"point_of_interest": {"lat": 30.200147418254954,"lon": 50.08152374376293},"field_data": {"name": "Pin17","lat": 30.211041637442243,"lon": 50.06570767130525},"moisture": 2492},"geometry": {"type": "Point","coordinates": [30.200147418254954,50.08152374376293]}},
-        {"type": "Feature","properties": {"point_of_interest": {"lat": 30.250466317024095,"lon": 49.96575297878594},"field_data": {"name": "Shev7-8-9","lat": 30.250268297428843,"lon": 49.98931843919832},"moisture": 2365},"geometry": {"type": "Point","coordinates": [30.250466317024095,49.96575297878594]}},
-        {"type": "Feature","properties": {"point_of_interest": {"lat": 30.546747418254956,"lon": 50.24552374376293},"field_data": {"name": "Tr4" ,"lat": 30.44503915052578,"lon": 50.03303109984244},"moisture": 65535},"geometry": {"type": "Point","coordinates": [30.546747418254956,50.24552374376293]}}
+      {
+        "type": "Feature",
+        "properties": {
+          "moisture": 2952
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.34429249760622,
+            50.08611402259139
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "moisture": 2492
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.200147418254954,
+            50.08152374376293
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "moisture": 2365
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.250466317024095,
+            49.96575297878594
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "moisture": 65535
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.546747418254956,
+            50.24552374376293
+          ]
+        }
+      }
     ]
-}
+  }
+  
