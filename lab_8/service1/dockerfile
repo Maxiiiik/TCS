@@ -5,6 +5,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY field_service.py .
+COPY service1.py .
+# COPY field_centroids.geojson .
 
-CMD ["python", "field_service.py"]
+CMD ["python", "-u", "service1.py"]

@@ -7,4 +7,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD [ "python", "soil_moisture_processing.py" ]
+CMD [ "python", "-u", "service3.py" ]
