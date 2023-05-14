@@ -112,7 +112,7 @@ CMD ["command", "arg1", "arg2"]
 }
 ```
 
-# Результат 1.geojson
+# Результат 1.geojson   https://github.com/Maxiiiik/TCS/blob/main/lab_8/service3/output/1.geojson
 ``` 
 {
     "type": "FeatureCollection",
