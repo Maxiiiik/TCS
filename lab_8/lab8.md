@@ -2,13 +2,13 @@
 
 ### 1. Створити у репозиторії каталог із назвою Lab_08. Всю необхідну структуру проектів та мікросервісів необхідно виконувати у ньому.
 ### 2. Створити .env файл для збереження параметрів сервісів та підключень.
-```	
+```
 POSTGRES_USER=[user]
 POSTGRES_PASSWORD=[password]
 POSTGRES_DB=[database]
 ```	
 3. Створити Dockerfile, який завантажує образ бази даних PostgreSQL із розширенням PostGIS.
-```
+``` dockerfile
 # Шаблон
 
 # Використовуйте базовий образ з підтримкою потрібної вам мови програмування або середовища
@@ -50,7 +50,7 @@ CMD ["command", "arg1", "arg2"]
 ```	
 ## Результат
 ### 1
-```	
+```	json
 {
     "point_of_interest": {
         "lat": 30.34429249760622,
@@ -65,7 +65,7 @@ CMD ["command", "arg1", "arg2"]
 }
 ```
 ### 2
-```
+``` json
 {
     "point_of_interest": {
         "lat": 30.200147418254954,
@@ -81,7 +81,7 @@ CMD ["command", "arg1", "arg2"]
 ```
 
 ### 3
-```
+``` json
 {
     "point_of_interest": {
         "lat": 30.250466317024095,
@@ -97,7 +97,7 @@ CMD ["command", "arg1", "arg2"]
 ```
 
 ### 4
-```
+``` json
 {
     "point_of_interest": {
         "lat": 30.546747418254956,
@@ -111,6 +111,76 @@ CMD ["command", "arg1", "arg2"]
     "moisture": 65535
 }
 ```
+
+# Результат 1.geojson
+``` 
+{
+    "type": "FeatureCollection",
+    "name": "field_data",
+    "crs": {
+      "type": "name",
+      "properties": {
+        "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+      }
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "moisture": 2952
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.34429249760622,
+            50.08611402259139
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "moisture": 2492
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.200147418254954,
+            50.08152374376293
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "moisture": 2365
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.250466317024095,
+            49.96575297878594
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "moisture": 65535
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            30.546747418254956,
+            50.24552374376293
+          ]
+        }
+      }
+    ]
+  }
+  
+```
+
 Додати відповідний Dockerfile для створення контейнеру та налаштувати запуск у docker-compose.
 8. Додати у файл .env усі необхідні для запуску змінні оточення.
 9. Запустити усі сервіси разом, щоб переконатись у їх дієздатності та комунікації.
