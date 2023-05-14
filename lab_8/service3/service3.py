@@ -64,9 +64,7 @@
 # if __name__ == '__main__':
 #     main()
 
-
-
-
+  
 
 import os
 import json
@@ -93,28 +91,24 @@ def read_message():
         consumer.commit()
 
 def process_message(message):
-    data = json.loads(message.replace("'", '"'))
+    data = ast.literal_eval(message)
     result = process_field_data(data)
-    filename = f"output/result_{data['point_of_interest']['lat']}_{data['point_of_interest']['lon']}.geojson"
-    save_to_geojson(result, filename)
-    print(f"File generated: {filename}")
+    save_to_json(result, f"output/result_{data['point_of_interest']['lat']}_{data['point_of_interest']['lon']}.geojson")
+    print(f"File generated: output/result_{data['point_of_interest']['lat']}_{data['point_of_interest']['lon']}.geojson")
     print("Message processed!")
     print("..................")
 
 def process_field_data(field_data):
-    moisture = field_data.get('moisture', 0)
+    moisture = get_soil_moisture(field_data['field_data']['lat'], field_data['field_data']['lon'])
 
-    lat = field_data['point_of_interest']['lat']
-    lon = field_data['point_of_interest']['lon']
-    
     feature = {
         'type': 'Feature',
         'properties': {
-            'moisture': moisture
+            'moisture': int(moisture)
         },
         'geometry': {
             'type': 'Point',
-            'coordinates': [lat, lon]
+            'coordinates': [field_data['point_of_interest']['lon'], field_data['point_of_interest']['lat']]
         }
     }
 
@@ -129,11 +123,26 @@ def process_field_data(field_data):
         },
         'features': [feature]
     }
+
     return result
 
-def save_to_geojson(data, filename):
+
+def get_soil_moisture(lat, lon):
+    file_path = 'soil_moisture.tif'
+    
+    with rasterio.open(file_path) as dataset:
+        col, row = dataset.index(lat, lon)
+        moisture = dataset.read(1, window=((row, row+1), (col, col+1)))
+    return moisture[0][0]
+
+# def save_to_json(data, filename):
+#     with open(filename, 'w') as file:
+#         file.write(data)
+
+def save_to_json(data, filename):
     with open(filename, 'w') as file:
-        json.dump(data, file)
+        json.dump(data, file, indent=4)
+
 
 def main():
     print("Service started!")
@@ -143,3 +152,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+  

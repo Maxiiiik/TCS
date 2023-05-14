@@ -1,1 +1,25 @@
-{"type": "FeatureCollection", "name": "field_data", "crs": {"type": "name", "properties": {"name": "urn:ogc:def:crs:OGC:1.3:CRS84"}}, "features": [{"type": "Feature", "properties": {"moisture": 0}, "geometry": {"type": "Point", "coordinates": [30.546747418254956, 50.24552374376293]}}]}
+{
+    "type": "FeatureCollection",
+    "name": "field_data",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "moisture": 65535
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    50.24552374376293,
+                    30.546747418254956
+                ]
+            }
+        }
+    ]
+}
