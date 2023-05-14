@@ -47,7 +47,7 @@ def process_message(message):
                 points = i.strip().split(",")
                 nearest_point = get_nearest_point(points)
                 print("Nearest point found: ", i.strip().split(","))
-                send_to_field_processing(nearest_point[3], nearest_point[2], points)
+                send_to_field_processing(nearest_point[3], nearest_point[2], nearest_point[1], points)
 
 
 def get_nearest_point(points):
@@ -64,14 +64,14 @@ def get_nearest_point(points):
     conn.close()
     return nearest_point
 
-def send_to_field_processing(nearest_point_X, nearest_point_Y, poi):
+def send_to_field_processing(nearest_point_X, nearest_point_Y, name, poi):
     data =  {
         'point_of_interest':{
             'lat': float(poi[0]),
             'lon': float(poi[1])
         },
         'field_data': {
-            "name": "Pin17", 
+            "name": name, 
             'lat': nearest_point_Y,
             'lon': nearest_point_X
         }
