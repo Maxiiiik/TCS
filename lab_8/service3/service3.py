@@ -108,7 +108,7 @@ def process_field_data(field_data):
         },
         'geometry': {
             'type': 'Point',
-            'coordinates': [field_data['point_of_interest']['lon'], field_data['point_of_interest']['lat']]
+            'coordinates': [field_data['point_of_interest']['lat'], field_data['point_of_interest']['lon']]
         }
     }
 
