@@ -114,6 +114,9 @@ CMD ["command", "arg1", "arg2"]
 
 # Результат 1.geojson   
 #### https://github.com/Maxiiiik/TCS/blob/main/lab_8/service3/output/1.geojson
+
+![image](https://github.com/Maxiiiik/TCS/assets/63784207/8b5bc4d0-376f-4018-83b1-d90b81834527)
+
 ``` 
 {
     "type": "FeatureCollection",
