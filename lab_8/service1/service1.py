@@ -5,7 +5,6 @@ from time import sleep
 import psycopg2
 from kafka import KafkaProducer
 
-
 POSTGIS_HOST = os.environ.get("POSTGRES_HOST")
 POSTGIS_PORT = os.environ.get("POSTGRES_PORT")
 POSTGIS_USER = os.environ.get("POSTGRES_USER")
@@ -15,7 +14,6 @@ KAFKA_HOST = os.environ.get("KAFKA_HOST")
 
 producer = KafkaProducer(bootstrap_servers=KAFKA_HOST)
 filename = 'data/field_centroids.geojson'
-
 
 def connect_to_db():
     conn = psycopg2.connect(
@@ -66,7 +64,6 @@ def check_new_file():
             print("Data saved into db.")
             print("................\n")
         sleep(5)
-
 
 if __name__ == "__main__":
     print("Service started!")
