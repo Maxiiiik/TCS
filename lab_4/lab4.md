@@ -51,6 +51,8 @@ services:
  ```
 
  ## 1.png
+ ![1](https://github.com/Maxiiiik/TCS/assets/63784207/c26c24f8-9220-47a9-9658-b3a8e5351c4b)
+
 ![he-hehe](https://user-images.githubusercontent.com/63784207/229834681-1aa48240-a289-46aa-a26a-0ad2c5e56054.gif)
 
 
@@ -62,6 +64,8 @@ services:
 
 # 4
 ## 4.png
+![4](https://github.com/Maxiiiik/TCS/assets/63784207/29f8cfa3-e100-4fc6-a401-f9c74150ac87)
+
 ```
 shuprr@Uplime:~/lab4$ docker-compose up -d
 [+] Running 2/0
